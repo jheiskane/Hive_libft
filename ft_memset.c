@@ -1,15 +1,19 @@
-void	*memset(void *str, int c, size_t n)
-{
-	int				i;
-	unsigned char	x;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/02 19:28:00 by jheiskan          #+#    #+#             */
+/*   Updated: 2021/11/02 19:36:22 by jheiskan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-	x = (unsigned char) c;
-	i = 0;
-	while (i < n)
-	{
-		(unsigned char) str[i] = x;
-	}
+void	*ft_memset(void *str, int c, size_t n)
+{
+	unsigned char *p = str;
+	while (0 <= n--)
+		*p++ = c;
 	return (str);
 }
-
-// Still needs working. Having problems with the casting
