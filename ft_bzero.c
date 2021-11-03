@@ -6,21 +6,18 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 15:26:49 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/10/29 15:33:27 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/03 11:06:20 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <strings.h>
+#include <string.h>
 
-void	bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	int	i;
+	unsigned char *str;
 
+	str = s;
 	while (i < n)
-	{
 		str[i] = '\0';
-	}
 }
-
-
-// Seems okay, not tested. 
