@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 12:31:55 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/04 11:30:30 by jheiskan         ###   ########.fr       */
+/*   Created: 2021/11/04 16:21:20 by jheiskan          #+#    #+#             */
+/*   Updated: 2021/11/04 16:22:18 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	const char *s;
-	char *d;
+	unsigned char	*str1;
+	unsigned char	*str2;
+	int	i;
 
-	d = dest;
-	s = src;
-
-	while (n--)
-		*d++ = *s++;
-	return (dest);
+	i = 0;
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
+	while (str1 && n--)
+	{
+		if (str1[i] != str2[i])
+			return (str1[i] - str2[i]);
+		i++;
+	}
+	return (0);
 }
