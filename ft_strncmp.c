@@ -6,7 +6,7 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 16:36:40 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/12 12:27:02 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/15 18:25:37 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,12 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 	res = 0;
 	i = 0;
-	while (s2[i] != '\0' && s1[i] != '\0' && s1[i] == s2[i])
+	while ((unsigned char)s2[i] != '\0' && (unsigned char)s1[i] != '\0' && (unsigned char)s1[i] == (unsigned char)s2[i])
 	{
-		if (i == n)
+		if ((i + 1) == n)
 			return (0);
 		i++;
 	}
-	return (s1[i] - s2[i]);
+
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

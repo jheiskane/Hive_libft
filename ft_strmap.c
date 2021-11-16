@@ -6,10 +6,13 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	int		i;
 
 	i = 0;
-	new = strnew(strlen(s));
+	new = ft_strnew(strlen(s));
+	if (!new)
+		return (NULL);
 	while (s[i])
 	{
-		new[i] = f(s[i]); //could  be tested with tolower()
+		new[i] = f(s[i]);
 		i++;
 	}
+	return (new);
 }

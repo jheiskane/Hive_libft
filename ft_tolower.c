@@ -6,13 +6,14 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 17:01:13 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/12 12:12:58 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/15 12:29:25 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
-	if (c <= 'A' && c >= 'Z')
+	if (c >= 'A' && c <= 'Z')
 		return (c + 32);
-	return (c);
+	else
+		return (c);
 }

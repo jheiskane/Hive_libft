@@ -6,29 +6,33 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 16:37:33 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/15 10:22:50 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/15 16:49:03 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(const char *haystack, const char *needle)
+char	*ft_strstr(char *haystack, char *needle)
 {
 	int i;
 	int x;
-
-
+	int y;
 
 	i = 0;
+	y = 0;
 	if (*needle == 0)
-		return ((char*)haystack);
+		return (haystack);
 	while (haystack[i] != '\0')
 	{
 		x = 0;
-		while (needle[x] != '\0' && needle[x] == haystack[i])
+		if (needle[x] == haystack[i])
 		{
-			x++;
-			if (needle[x] == '\0')
-				return ((char *)&haystack[(i+1)-x]);
-			i++;
+			y = i;
+			while (needle[x] != '\0' && needle[x] == haystack[y])
+			{
+				x++;
+				if (needle[x] == '\0')
+					return (&haystack[(y + 1) - x]);
+				y++;
+			}
 		}
 		i++;
 	}

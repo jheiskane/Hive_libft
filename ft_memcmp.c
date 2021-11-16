@@ -6,7 +6,7 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 16:21:20 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/12 12:22:34 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/15 14:07:12 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	str1 = (unsigned char *)s1;
 	str2 = (unsigned char *)s2;
-	while (str1 && n--)
+	while (n--) // removed protection for NULL
 	{
 		if (str1[i] != str2[i])
 			return (str1[i] - str2[i]);

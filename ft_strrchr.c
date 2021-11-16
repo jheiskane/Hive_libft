@@ -6,7 +6,7 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 16:37:29 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/12 11:47:10 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/15 11:56:59 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strrchr(const char *s, int c) // changed to const char - TEST
 	while (i >= 0 || (char)c == 0) // does this need implicit decl?
 	{
 		if (s[i] == (char)c)
-			return (&s[i]);
+			return ((char *)&s[i]);
 		i--;
 	}
 	return (0);

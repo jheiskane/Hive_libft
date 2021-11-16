@@ -6,22 +6,24 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 11:36:46 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/15 17:47:02 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/15 22:50:35 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strcat(char *dest, const char *src)
 {
-	int	i;
-	int	x;
+	size_t	i;
+	size_t	x;
 
 	x = 0;
-	while ((unsigned char)dest[x])
+	while (dest[x])
 		x++;
 	i = 0;
-	while ((unsigned char)src[i])
+	while (src[i])
 	{
-		dest[x + i] = (unsigned char)src[i];
+		dest[x + i] = src[i];
 		i++;
 	}
 	dest[i + x] = '\0';

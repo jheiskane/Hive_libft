@@ -6,15 +6,15 @@
 #    By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/27 09:59:08 by smarvin           #+#    #+#              #
-#    Updated: 2021/11/15 11:42:15 by jheiskan         ###   ########.fr        #
+#    Updated: 2021/11/16 17:18:41 by jheiskan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRC = ./srcs/*.c
+SRC = ./*.c
 
-INCL = ./includes
+INCL = ./
 
 OBJ = *.o
 
