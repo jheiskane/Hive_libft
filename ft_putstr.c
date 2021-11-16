@@ -6,7 +6,7 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 06:36:17 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/12 12:18:42 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/16 18:32:47 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr(const char *s)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i])

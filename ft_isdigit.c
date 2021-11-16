@@ -6,11 +6,11 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 10:10:10 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/15 12:24:45 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/16 17:39:04 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int c)
 {
-	return (c <= 57 && c >=48);
+	return (c <= 57 && c >= 48);
 }

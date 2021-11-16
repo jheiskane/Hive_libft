@@ -6,7 +6,7 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 12:59:28 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/15 21:00:36 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/16 18:24:13 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	unsigned char *s;
-	unsigned char *d;
-	size_t	i;
+	unsigned char	*s;
+	unsigned char	*d;
+	size_t			i;
 
 	d = (unsigned char *)dest;
 	s = (unsigned char *)src;

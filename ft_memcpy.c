@@ -6,7 +6,7 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 12:31:55 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/15 21:04:37 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/16 18:24:55 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	i = 0;
 	if (!dest)
-		return(NULL);
-	d = (unsigned char*)dest;
-	s = (unsigned char*)src;
+		return (NULL);
+	d = (unsigned char *)dest;
+	s = (unsigned char *)src;
 	while (i < n)
 	{
 		d[i] = s[i];

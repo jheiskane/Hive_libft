@@ -6,7 +6,7 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 16:37:14 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/15 11:56:29 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/16 17:38:42 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		{
 			x++;
 			if (needle[x] == '\0')
-				return ((char *)&haystack[(i+1)-x]);
+				return ((char *)&haystack[(i + 1) - x]);
 			i++;
 		}
 		i++;

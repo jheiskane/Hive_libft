@@ -6,15 +6,15 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 06:36:17 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/11 15:38:30 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/16 18:32:27 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putendl(char const *s)
+void	ft_putendl(char const *s)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i])

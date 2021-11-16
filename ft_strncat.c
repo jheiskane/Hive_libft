@@ -6,7 +6,7 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 11:45:42 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/15 16:55:44 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/16 17:33:53 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strncat(char *dest, const char *src, size_t n)
 	i = 0;
 	while (src[i] && n > i)
 	{
-		dest[x+i] = src[i];
+		dest[x + i] = src[i];
 		i++;
 	}
 	dest[x + i] = '\0';

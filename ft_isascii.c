@@ -6,13 +6,13 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 10:22:20 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/02 10:22:21 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/16 17:40:41 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
-		return(1);
+		return (1);
 	return (0);
 }

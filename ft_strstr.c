@@ -6,15 +6,15 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 16:37:33 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/15 16:49:03 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/16 20:14:16 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strstr(char *haystack, char *needle)
 {
-	int i;
-	int x;
-	int y;
+	int	i;
+	int	x;
+	int	y;
 
 	i = 0;
 	y = 0;
