@@ -6,14 +6,18 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 12:01:05 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/10/28 12:01:08 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/12 22:19:44 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int	i;
+#include "libft.h"
 
+size_t	ft_strlen(const char *str)
+{
+	size_t	i;
+
+	if (!str)
+		return (0);
 	i = 0;
 	while (str[i] != '\0')
 		i++;

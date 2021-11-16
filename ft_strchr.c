@@ -6,19 +6,21 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 16:37:09 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/01 17:27:56 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/15 10:14:35 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	int		i;
+	char	*str;
 
+	str = s;
 	i = 0;
-	while (s[i] || c == 0)
+	while (str[i] || c == 0)
 	{
-		if (s[i] == c)
-			return (&s[i]);
+		if (str[i] == c)
+			return (&str[i]);
 		i++;
 	}
 	return (0);

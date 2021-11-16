@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 11:01:24 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/12 23:02:17 by jheiskan         ###   ########.fr       */
+/*   Created: 2021/05/31 06:36:17 by jheiskan          #+#    #+#             */
+/*   Updated: 2021/11/12 12:18:42 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dest, const char *src, size_t len)
+void	ft_putstr(const char *s)
 {
-	size_t	i;
+	int i;
 
 	i = 0;
-	while (src[i] && i < len)
+	while (s[i])
 	{
-		dest[i] = src[i];
+		ft_putchar(s[i]);
 		i++;
 	}
-	while (i < len)
-		dest[i++] = '\0';
-	return (dest);
 }

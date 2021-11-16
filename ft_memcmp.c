@@ -6,11 +6,11 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 16:21:20 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/04 16:22:18 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/12 12:22:34 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

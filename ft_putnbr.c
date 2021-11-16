@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 11:01:24 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/12 23:02:17 by jheiskan         ###   ########.fr       */
+/*   Created: 2021/05/31 06:52:53 by jheiskan          #+#    #+#             */
+/*   Updated: 2021/11/11 15:40:06 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dest, const char *src, size_t len)
+void	ft_putnbr(int nbr)
 {
-	size_t	i;
-
-	i = 0;
-	while (src[i] && i < len)
+	if (nbr == -2147483648)
 	{
-		dest[i] = src[i];
-		i++;
+		ft_putchar('-');
+		ft_putchar('2');
+		ft_putnbr(147483648);
 	}
-	while (i < len)
-		dest[i++] = '\0';
-	return (dest);
+	else if (nbr < 0)
+	{
+		ft_putchar('-');
+		ft_putnbr(-nbr);
+	}
+	else if (nbr > 9)
+	{
+		ft_putnbr(nbr / 10);
+		ft_putnbr(nbr % 10);
+	}
+	else
+	{
+		ft_putchar(nbr + '0');
+	}
 }

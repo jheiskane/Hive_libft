@@ -6,15 +6,15 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 15:38:29 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/04 15:38:32 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/12 12:22:28 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char *str;
+	unsigned char	*str;
 
 	str = (unsigned char*)s;
 

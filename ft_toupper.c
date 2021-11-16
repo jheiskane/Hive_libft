@@ -6,13 +6,13 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 17:08:00 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/01 17:08:19 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/12 12:12:18 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
-	if (c > 91 && c < 122)
-		return (c-32);
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
 	return (c);
 }

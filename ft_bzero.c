@@ -6,18 +6,19 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 15:26:49 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/03 11:06:20 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/12 16:35:50 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
-	int	i;
-	unsigned char *str;
+	size_t			i;
+	unsigned char	*str;
 
 	str = s;
-	while (i < n)
-		str[i] = '\0';
+	i = 0;
+	while (n--)
+		str[i++] = '\0';
 }

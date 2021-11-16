@@ -6,13 +6,13 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 09:38:38 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/02 09:38:42 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/12 12:06:36 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-	if (c > 19 && c < 127)
+	if (c >= 40 && c <= 176)
 		return(1);
 	return (0);
 }

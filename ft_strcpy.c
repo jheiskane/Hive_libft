@@ -6,11 +6,13 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 10:52:36 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/03 12:40:38 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/12 12:25:54 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+#include "libft.h"
+
+char	*ft_strcpy(char *dest, const char *src)
 {
 	int	i;
 

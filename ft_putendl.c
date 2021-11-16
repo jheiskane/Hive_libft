@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlcat.c                                          :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 11:07:33 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/03 11:07:34 by jheiskan         ###   ########.fr       */
+/*   Created: 2021/05/31 06:36:17 by jheiskan          #+#    #+#             */
+/*   Updated: 2021/11/11 15:38:30 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlcat(char *dest, char *src, int size)
-{
-	int	i;
-	int	x;
+#include "libft.h"
 
-	x = 0;
-	while (dest[x] && size-- != 0)
-		x++;
+void ft_putendl(char const *s)
+{
+	int i;
+
 	i = 0;
-	while (src[i++])
-		dest[x+i] = src[i];
-	if (size > 0)
-		dest[x+i] = '\0';
-	return (x+i+1);
+	while (s[i])
+	{
+		ft_putchar(s[i]);
+		i++;
+	}
+	ft_putchar('\n');
 }

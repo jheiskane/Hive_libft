@@ -6,28 +6,18 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 11:55:56 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/01 17:28:51 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/12 22:40:50 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
-
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *src)
 {
 	char	*cpy;
 	int		i;
 
-	cpy = malloc(sizeof(char) * (ft_strlen(src) + 1));
+	cpy = (char *)malloc(sizeof(char) * (ft_strlen(src) + 1));
 	if (!cpy)
 		return (NULL);
 	i = 0;
