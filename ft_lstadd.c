@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 18:35:25 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/16 18:35:26 by jheiskan         ###   ########.fr       */
+/*   Created: 2021/11/18 18:40:53 by jheiskan          #+#    #+#             */
+/*   Updated: 2021/11/18 18:40:54 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	char	*new;
-	int		i;
-
-	i = 0;
-	new = ft_strnew(ft_strlen(s));
 	if (!new)
-		return (NULL);
-	while (s[i])
-	{
-		new[i] = f(i, s[i]);
-		i++;
-	}
-	return (new);
+		return ;
+	new->next = *alst;
+	*alst = new;
 }

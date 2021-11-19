@@ -6,11 +6,10 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 10:23:37 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/12 16:37:19 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/18 19:04:38 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* NO error checking version, as in the original */
 int	ft_atoi(const char *str)
 {
 	int	i;

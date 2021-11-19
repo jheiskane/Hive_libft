@@ -6,7 +6,7 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 18:34:19 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/16 18:34:39 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/17 09:51:55 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	new = ft_strnew(i + x);
 	if (!new)
 		return (NULL);
-	new = ft_strcat((char *)s1, s2);
+	ft_strcpy(new, s1);
+	new = ft_strcat(new, s2);
 	return (new);
 }

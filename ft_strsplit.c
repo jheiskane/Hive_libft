@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 18:42:14 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/16 20:14:01 by jheiskan         ###   ########.fr       */
+/*   Created: 2021/11/18 18:24:28 by jheiskan          #+#    #+#             */
+/*   Updated: 2021/11/19 13:29:16 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,48 +23,57 @@ static int	f_words(const char *s, char c, int *w_found)
 	{
 		while (s[i] == c && s[i])
 			i++;
-		while (s[i] != c && s[i])
+		if (s[i] != c && s[i])
 		{
-			i++;
-			*w_found = 1;
+			while (s[i] != c && s[i])
+			{
+				i++;
+				*w_found = 1;
+			}
+			while (s[i] == c && s[i])
+				i++;
+			if (*w_found)
+				words++;
 		}
-		if (*w_found)
-			words++;
 	}
 	return (words);
 }
 
-static int	popul_chars(char **new, const char *s, int x, char c)
+static int	popul_chars(char **new, const char *s, size_t x, char c, int words)
 {
-	int	i;
-	int	words;
+	size_t	i;
+	int		w_index;
 
-	words = 0;
 	i = 0;
-	while (s[i])
+	w_index = 0;
+	while (words > w_index)
 	{
 		x = 0;
-		while (s[i] == c)
+		while (s[i] == c && s[i])
 			i++;
 		while (s[i] != c && s[i])
 		{
 			x++;
 			i++;
 		}
-		new[words] = ft_strnew(x);
-		if (!new[words])
-			return (0);
-		ft_strncpy(new[words], &s[i - x], x);
-		words++;
-		if (s[i] == '\0')
-			break ;
+		if (x > 0)
+		{
+			new[w_index] = ft_strnew(x);
+			if (!new[w_index])
+				return (0);
+			ft_strncpy(new[w_index], &s[i - x], x);
+			w_index++;
+		}
+		while (s[i] == c)
+			i++;
 	}
+	new[words] = 0;
 	return (words);
 }
 
 char	**ft_strsplit(char const *s, char c)
 {
-	int		x;
+	size_t	x;
 	int		words;
 	char	**new;
 	int		w_found;
@@ -74,13 +83,9 @@ char	**ft_strsplit(char const *s, char c)
 	w_found = 0;
 	x = 0;
 	words = f_words(s, c, &w_found);
-	if (w_found)
-		new = (char **)malloc(words * sizeof(char *));
-	else
-		return (NULL);
+	new = (char **)malloc((words + 1) * sizeof(char *));
 	if (!new)
 		return (NULL);
-	words = popul_chars(new, s, x, c);
-	new[words] = ft_strnew(0);
+	popul_chars(new, s, x, c, words);
 	return (new);
 }

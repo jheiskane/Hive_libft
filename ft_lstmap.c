@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 18:35:25 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/16 18:35:26 by jheiskan         ###   ########.fr       */
+/*   Created: 2021/11/18 18:41:03 by jheiskan          #+#    #+#             */
+/*   Updated: 2021/11/19 11:20:18 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	char	*new;
-	int		i;
+	t_list	*tmp_lst;
+	t_list	*mapped;
+	t_list	*tmp;
 
-	i = 0;
-	new = ft_strnew(ft_strlen(s));
-	if (!new)
-		return (NULL);
-	while (s[i])
+	if (lst != NULL)
 	{
-		new[i] = f(i, s[i]);
-		i++;
+		tmp_lst = lst;
+		mapped = f(ft_lstnew(lst->content, lst->content_size));
+		tmp_lst = tmp_lst->next;
+		tmp = mapped;
+		while (tmp_lst != NULL)
+		{
+			tmp->next = f(ft_lstnew(tmp_lst->content, tmp_lst->content_size));
+			tmp = tmp->next;
+			tmp_lst = tmp_lst->next;
+		}
+		return (mapped);
 	}
-	return (new);
+	return (NULL);
 }

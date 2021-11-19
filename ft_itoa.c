@@ -6,19 +6,23 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 17:40:51 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/16 18:09:29 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/17 09:57:25 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	calc_flag(int *n, char *flag, int x)
+static int	calc_flag(int *i, char *flag, int x)
 {
-	if (n < 0)
+	if (*i < 0)
 	{
 		*flag = '-';
-		*n = *n + 1;
-		*n = *n * -1;
+		if (*i == INT_MIN)
+		{
+			*flag = 'M';
+			*i = *i + 1;
+		}
+		*i = *i * -1;
 		x++;
 	}
 	return (x);
@@ -28,14 +32,19 @@ static char	*populate_nbr(char *new, int x, int n, char *flag)
 {
 	int	i;
 
+	if (*flag == '-')
+		n = n * -1;
 	while (x > 0)
 	{
-		i = n % 10;
-		if (*flag == '-')
+		if (*flag == 'M')
 		{
+			new[x - 1] = 8 + '0';
+			x--;
+			n = n / 10;
+			n = -1 * n;
 			*flag = 1;
-			i++;
 		}
+		i = n % 10;
 		n = n / 10;
 		new[x - 1] = i + '0';
 		x--;
@@ -52,8 +61,8 @@ char	*ft_itoa(int n)
 
 	flag = ' ';
 	x = 1;
-	x = calc_flag(&n, &flag, x);
 	i = n;
+	x = calc_flag(&i, &flag, x);
 	while (i > 9)
 	{
 		i = i / 10;
@@ -63,7 +72,7 @@ char	*ft_itoa(int n)
 	if (!new)
 		return (NULL);
 	new = populate_nbr(new, x, n, &flag);
-	if (flag == 1)
-		new[x] = '-';
+	if (flag == '-' || flag == 1)
+		new[0] = '-';
 	return (new);
 }
