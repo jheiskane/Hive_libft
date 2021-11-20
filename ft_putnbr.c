@@ -6,7 +6,7 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 06:52:53 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/11 15:40:06 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/20 14:55:26 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ void	ft_putnbr(int nbr)
 	}
 	else
 	{
-		ft_putchar(nbr + '0');
+		ft_putchar((char)nbr + '0');
 	}
 }

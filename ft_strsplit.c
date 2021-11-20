@@ -6,16 +6,16 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 18:24:28 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/20 14:33:38 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/20 15:03:13 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	f_words(const char *s, char c, int *w_found)
+static size_t	f_words(const char *s, char c, int *w_found)
 {
-	int	i;
-	int	words;
+	size_t	i;
+	size_t	words;
 
 	words = 0;
 	i = 0;
@@ -39,7 +39,7 @@ static int	f_words(const char *s, char c, int *w_found)
 	return (words);
 }
 
-static int	traverse_word(const char *s, size_t *i, char c)
+static size_t	traverse_word(const char *s, size_t *i, char c)
 {
 	size_t	x;
 
@@ -54,10 +54,10 @@ static int	traverse_word(const char *s, size_t *i, char c)
 	return (x);
 }
 
-static int	popul_chars(char **new, const char *s, char c, int words)
+static int	popul_chars(char **new, const char *s, char c, size_t words)
 {
 	size_t	i;
-	int		w_index;
+	size_t	w_index;
 	size_t	x;
 
 	i = 0;
@@ -80,7 +80,7 @@ static int	popul_chars(char **new, const char *s, char c, int words)
 char	**ft_strsplit(char const *s, char c)
 {
 	size_t	x;
-	int		words;
+	size_t	words;
 	char	**new;
 	int		w_found;
 

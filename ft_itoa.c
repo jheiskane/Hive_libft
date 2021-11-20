@@ -6,7 +6,7 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 17:40:51 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/17 09:57:25 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/20 14:51:23 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static char	*populate_nbr(char *new, int x, int n, char *flag)
 		}
 		i = n % 10;
 		n = n / 10;
-		new[x - 1] = i + '0';
+		new[x - 1] = (char)i + '0';
 		x--;
 	}
 	return (new);
@@ -68,7 +68,7 @@ char	*ft_itoa(int n)
 		i = i / 10;
 		x++;
 	}
-	new = ft_strnew(x);
+	new = ft_strnew((size_t)x);
 	if (!new)
 		return (NULL);
 	new = populate_nbr(new, x, n, &flag);

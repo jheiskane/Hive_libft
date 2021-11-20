@@ -6,7 +6,7 @@
 #    By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/27 09:59:08 by smarvin           #+#    #+#              #
-#    Updated: 2021/11/20 13:55:18 by jheiskan         ###   ########.fr        #
+#    Updated: 2021/11/20 15:06:11 by jheiskan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ $(NAME):
 
 clean:
 	/bin/rm -f $(OBJ)
-	
+
 fclean: clean
 	/bin/rm -f $(NAME)
 
