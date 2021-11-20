@@ -6,7 +6,7 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 18:24:28 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/19 13:29:16 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/20 14:33:38 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,36 +39,42 @@ static int	f_words(const char *s, char c, int *w_found)
 	return (words);
 }
 
-static int	popul_chars(char **new, const char *s, size_t x, char c, int words)
+static int	traverse_word(const char *s, size_t *i, char c)
+{
+	size_t	x;
+
+	x = 0;
+	while (s[*i] == c && s[*i])
+		(*i)++;
+	while (s[*i] != c && s[*i])
+	{
+		x++;
+		(*i)++;
+	}
+	return (x);
+}
+
+static int	popul_chars(char **new, const char *s, char c, int words)
 {
 	size_t	i;
 	int		w_index;
+	size_t	x;
 
 	i = 0;
 	w_index = 0;
 	while (words > w_index)
 	{
-		x = 0;
-		while (s[i] == c && s[i])
-			i++;
-		while (s[i] != c && s[i])
-		{
-			x++;
-			i++;
-		}
+		x = traverse_word(s, &i, c);
 		if (x > 0)
 		{
 			new[w_index] = ft_strnew(x);
 			if (!new[w_index])
 				return (0);
-			ft_strncpy(new[w_index], &s[i - x], x);
-			w_index++;
+			ft_strncpy(new[w_index++], &s[i - x], x);
 		}
-		while (s[i] == c)
-			i++;
 	}
 	new[words] = 0;
-	return (words);
+	return (1);
 }
 
 char	**ft_strsplit(char const *s, char c)
@@ -86,6 +92,7 @@ char	**ft_strsplit(char const *s, char c)
 	new = (char **)malloc((words + 1) * sizeof(char *));
 	if (!new)
 		return (NULL);
-	popul_chars(new, s, x, c, words);
+	if (popul_chars(new, s, c, words) == 0)
+		return (NULL);
 	return (new);
 }
