@@ -6,7 +6,7 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 18:24:28 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/20 15:03:13 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/23 14:31:01 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ static int	popul_chars(char **new, const char *s, char c, size_t words)
 
 char	**ft_strsplit(char const *s, char c)
 {
-	size_t	x;
 	size_t	words;
 	char	**new;
 	int		w_found;
@@ -87,7 +86,6 @@ char	**ft_strsplit(char const *s, char c)
 	if (!s)
 		return (NULL);
 	w_found = 0;
-	x = 0;
 	words = f_words(s, c, &w_found);
 	new = (char **)malloc((words + 1) * sizeof(char *));
 	if (!new)

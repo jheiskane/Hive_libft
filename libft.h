@@ -6,7 +6,7 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 20:16:29 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/18 18:48:28 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/23 16:10:49 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@ typedef struct s_list
 	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
-# define INT_MAX 2147483647
-# define INT_MIN -2147483648
+
+#define MAX_INT 2147483647
+#define MIN_INT -2147483648
 
 void	*ft_memset(void *str, int c, size_t n);
 void	ft_bzero(void *s, size_t n);

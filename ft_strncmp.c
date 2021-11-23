@@ -6,7 +6,7 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 16:36:40 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/16 18:35:53 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/23 14:28:48 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t			i;
-	int				res;
 	unsigned char	*str1;
 	unsigned char	*str2;
 
 	str1 = (unsigned char *) s1;
 	str2 = (unsigned char *) s2;
-	res = 0;
 	i = 0;
 	if (n == 0)
 		return (0);
