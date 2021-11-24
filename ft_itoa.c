@@ -6,7 +6,7 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 17:40:51 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/23 16:12:07 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/24 11:23:42 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	calc_flag(int *i, char *flag, int x)
 	if (*i < 0)
 	{
 		*flag = '-';
-		if (*i == MIN_INT)
+		if (*i == -2147483648)
 		{
 			*flag = 'M';
 			*i = *i + 1;

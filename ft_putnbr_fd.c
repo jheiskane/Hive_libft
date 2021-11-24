@@ -6,7 +6,7 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 18:32:31 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/23 16:11:11 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/24 11:24:36 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	if (n == MIN_INT)
+	if (n == -2147483648)
 	{
 		ft_putstr_fd("-2147483648", fd);
 		return ;

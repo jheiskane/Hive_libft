@@ -6,14 +6,14 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 14:58:22 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/23 15:45:44 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/11/24 11:18:32 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned char	*move(unsigned char *d, unsigned char *s, size_t n)
-{	
+static unsigned char	*move(unsigned char *d, unsigned char *s, size_t n)
+{
 	while (n > 0)
 	{
 		d[n - 1] = s[n - 1];
@@ -42,6 +42,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		}
 	}
 	else
-		return (move(d, s, n));
+		d = move(d, s, n);
 	return (dest);
 }
