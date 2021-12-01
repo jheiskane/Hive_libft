@@ -6,15 +6,17 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 10:23:37 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/18 19:04:38 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/12/01 18:59:00 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	sign;
-	int	res;
+	int					i;
+	int					sign;
+	unsigned long long	res;
 
 	i = 0;
 	sign = 1;
@@ -23,15 +25,18 @@ int	ft_atoi(const char *str)
 	str[i] == '\f' || str[i] == '\r' || str[i] == ' ')
 		i++;
 	if (str[i] == '-')
-	{
 		sign = -1;
-		i++;
-	}
-	else if (str[i] == '+')
+	if (str[i] == '-' || str[i] == '+')
 		i++;
 	if (str[i] <= '9' && str[i] >= '0')
 		res = str[i++] - '0';
 	while (str[i] <= '9' && str[i] >= '0')
+	{
+		if (res > 9223372036854775807ull / 10 && sign == 1)
+			return (-1);
+		if (res > 9223372036854775807ull / 10 && sign == -1)
+			return (0);
 		res = res * 10 + str[i++] - '0';
-	return (res * sign);
+	}
+	return ((int)res * sign);
 }
