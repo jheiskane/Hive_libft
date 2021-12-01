@@ -6,7 +6,7 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 20:16:29 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/24 11:24:01 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/12/01 20:51:05 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,9 @@ void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void	ft_lstadd(t_list **alst, t_list *new);
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+t_list	*ft_ret_last_lst(t_list **list);
+void	ft_lst_add_end(t_list **list, t_list *new);
+char	*ft_joindel(char *s1, char *s2);
+int		ft_isspace(char c);
+size_t	ft_findword(const char *src, const char *word);
 #endif
