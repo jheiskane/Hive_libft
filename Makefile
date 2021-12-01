@@ -6,7 +6,7 @@
 #    By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/27 09:59:08 by smarvin           #+#    #+#              #
-#    Updated: 2021/11/24 12:28:10 by jheiskan         ###   ########.fr        #
+#    Updated: 2021/12/01 20:54:14 by jheiskan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ ft_strchr.c ft_strclr.c ft_strcmp.c ft_strcpy.c ft_strdel.c ft_strdup.c\
 ft_strequ.c ft_striter.c ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlen.c\
 ft_strmap.c ft_strmapi.c ft_strncat.c ft_strncmp.c ft_strncpy.c ft_strnequ.c\
 ft_strnew.c ft_strnstr.c ft_strrchr.c ft_strsplit.c ft_strstr.c ft_strsub.c\
-ft_strtrim.c ft_tolower.c ft_toupper.c
+ft_strtrim.c ft_tolower.c ft_toupper.c ft_ret_last_lst.c ft_lst_add_end.c\
+ft_joindel.c ft_isspace.c ft_findword.c
 
 INCL = ./
 
@@ -33,7 +34,7 @@ all: $(NAME)
 
 $(NAME):
 	gcc -Wall -Wextra -Werror -c -I $(INCL) $(SRC)
-	ar rc $(NAME) $(OBJ)
+	ar rcs $(NAME) $(OBJ)
 
 clean:
 	/bin/rm -f $(OBJ)
