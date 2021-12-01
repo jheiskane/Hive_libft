@@ -6,11 +6,22 @@
 /*   By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 18:24:28 by jheiskan          #+#    #+#             */
-/*   Updated: 2021/11/23 14:31:01 by jheiskan         ###   ########.fr       */
+/*   Updated: 2021/12/01 21:48:14 by jheiskan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static int	array_clear(char **arr, int i)
+{
+	while (i >= 0)
+	{
+		free(arr[i]);
+		i--;
+	}
+	free(arr);
+	return (0);
+}
 
 static size_t	f_words(const char *s, char c, int *w_found)
 {
@@ -69,7 +80,7 @@ static int	popul_chars(char **new, const char *s, char c, size_t words)
 		{
 			new[w_index] = ft_strnew(x);
 			if (!new[w_index])
-				return (0);
+				return (array_clear(new, w_index));
 			ft_strncpy(new[w_index++], &s[i - x], x);
 		}
 	}
