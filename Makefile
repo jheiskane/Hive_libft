@@ -6,11 +6,13 @@
 #    By: jheiskan <jheiskan@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/27 09:59:08 by smarvin           #+#    #+#              #
-#    Updated: 2021/12/01 20:54:14 by jheiskan         ###   ########.fr        #
+#    Updated: 2021/12/17 16:26:02 by jheiskan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+
+SRC_FOLDER = ./srcs/
 
 SRC = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c\
 ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c ft_lstadd.c\
@@ -26,14 +28,14 @@ ft_strnew.c ft_strnstr.c ft_strrchr.c ft_strsplit.c ft_strstr.c ft_strsub.c\
 ft_strtrim.c ft_tolower.c ft_toupper.c ft_ret_last_lst.c ft_lst_add_end.c\
 ft_joindel.c ft_isspace.c ft_findword.c
 
-INCL = ./
-
 OBJ = $(SRC:.c=.o)
+SRCS = $(addprefix $(SRC_FOLDER),$(SRC))
+INCL = ./includes/
 
 all: $(NAME)
 
 $(NAME):
-	gcc -Wall -Wextra -Werror -c -I $(INCL) $(SRC)
+	gcc -Wall -Wextra -Werror -c -I $(INCL) $(SRCS)
 	ar rcs $(NAME) $(OBJ)
 
 clean:
